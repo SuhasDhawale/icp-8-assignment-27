@@ -3,9 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Event Handling Example</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    
+<body onload="onLoadHandler()">
+
+<div class="container">
+    <button class="button" onclick="onClickHandler()">Click Me</button>
+    <button class="button" ondblclick="onDblClickHandler()">Double Click Me</button>
+    <br>
+    <input class="input-field" type="text" onkeypress="onKeyPressHandler(event)"
+           onkeydown="onKeyDownHandler(event)"
+           onkeyup="onKeyUpHandler(event)" onchange="onChangeHandler(event)">
+    <br>
+    <div class="mouse-area" onmouseover="onMouseOverHandler()"
+         onmousemove="onMouseMoveHandler()"
+         onmouseout="onMouseOutHandler()">
+        Mouse Events Area
+    </div>
+</div>
+
+<script>
+    function onLoadHandler() {
+        console.log("Page has loaded");
+    }
+
+    function onClickHandler() {
+        alert("Button clicked");
+    }
+
+    function onDblClickHandler() {
+        alert("Button double-clicked");
+    }
+
+    function onKeyPressHandler(event) {
+        console.log(`Key pressed: ${event.key}`);
+    }
+
+    function onKeyDownHandler(event) {
+        console.log(`Key down: ${event.key}`);
+    }
+
+    function onKeyUpHandler(event) {
+        console.log(`Key up: ${event.key}`);
+    }
+
+    function onChangeHandler(event) {
+        alert(`Input changed to: ${event.target.value}`);
+    }
+
+    function onMouseOverHandler() {
+        console.log("Mouse over the area");
+    }
+
+    function onMouseMoveHandler() {
+        console.log("Mouse is moving in the area");
+    }
+
+    function onMouseOutHandler() {
+        console.log("Mouse left the area");
+    }
+</script>
+
 </body>
 </html>
